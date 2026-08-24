@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ระบบบันทึกธุรกรรม</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📊 ระบบบันทึกธุรกรรม</h1>
+
+    <!-- ฟอร์มเพิ่มรายการ -->
+    <div class="card form-section">
+      <input type="text" id="itemName" placeholder="ชื่อรายการ">
+      <input type="number" id="amount" placeholder="จำนวนเงิน">
+
+      <select id="type">
+        <option value="รายรับ">รายรับ</option>
+        <option value="รายจ่าย">รายจ่าย</option>
+      </select>
+
+      <select id="category">
+        <option value="อาหาร">🍜 อาหาร</option>
+        <option value="เดินทาง">🚌 เดินทาง</option>
+        <option value="ช้อปปิ้ง">🛍️ ช้อปปิ้ง</option>
+        <option value="เงินเดือน">💰 เงินเดือน</option>
+        <option value="อื่นๆ">📌 อื่นๆ</option>
+      </select>
+
+      <button onclick="addTransaction()">➕ เพิ่มรายการ</button>
+    </div>
+
+    <!-- ช่องค้นหา -->
+    <div class="card search-section">
+      <input type="text" id="searchInput" placeholder="🔍 ค้นหาชื่อรายการ...">
+    </div>
+
+    <!-- ตารางแสดงรายการ -->
+    <div class="card">
+      <h2>📜 ประวัติธุรกรรม</h2>
+      <table id="transactionTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>ประเภท</th>
+            <th>ชื่อรายการ</th>
+            <th>หมวดหมู่</th>
+            <th>จำนวนเงิน</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- สรุปรายงาน -->
+    <h2>💡 สรุปรายงานการเงิน</h2>
+    <div class="summary-grid">
+      <div class="summary-card income" id="incomeBox">รายรับรวม: ฿0.0</div>
+      <div class="summary-card expense" id="expenseBox">รายจ่ายรวม: ฿0.0</div>
+      <div class="summary-card balance" id="balanceBox">คงเหลือสุทธิ: ฿0.0</div>
+    </div>
+
+    <!-- ปุ่มล้างข้อมูล -->
+    <button id="clearBtn" class="danger">🗑️ ล้างข้อมูลทั้งหมด</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
